@@ -4,7 +4,11 @@
     font-family: Helvetica;
 }
 .main-container{
-    min-height: 80vh;
+    min-height: 75vh;
+    padding-top: 25px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 .hide{
     display: none !important;

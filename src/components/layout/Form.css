@@ -1,0 +1,37 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+}
+.form input{
+    padding: 8px 15px;
+    margin-bottom: 1.5em;
+    border: 1px solid #282c34;
+}
+.form input[type="submit"]{
+    background-color: #62D9FB;
+    border: 1px solid #62D9FB;
+    margin-top: 20px;
+    color: black;
+    transition: .5s;
+    cursor: pointer;
+}
+.form input[type="submit"]:hover{
+    background-color: white;
+    border: 1px solid #282c34;
+}
+.input-container{
+    display: flex;
+    flex-direction: column;
+}
+.input-container label{
+    font-weight: bold;
+    margin-bottom: .4em;
+}
+.form input,
+.form select {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+}
