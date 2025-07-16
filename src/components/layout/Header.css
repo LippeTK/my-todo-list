@@ -1,0 +1,8 @@
+.header{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    background-color: #292C35;
+    color: #62D9FB;
+}
