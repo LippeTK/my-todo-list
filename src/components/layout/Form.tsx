@@ -22,9 +22,6 @@ function Form({btnText, taskList, setTaskList}:Props){
 
         setTaskList!([...taskList, newTask])
         setTitle("")
-        setCategory("")
-
-        console.log(taskList)
     }
 
     const handleChange = (e:ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -44,10 +41,10 @@ function Form({btnText, taskList, setTaskList}:Props){
                 <div className='input-container'>
                     <label>Categoria:</label>
                     <select name="category" onChange={handleChange}>
-                        <option value="work">Trabalho</option>
-                        <option value="study">Estudos</option>
-                        <option value="health">Saúde</option>
-                        <option value="personal">Pessoal</option>
+                        <option value="Trabalho">Trabalho</option>
+                        <option value="Estudos">Estudos</option>
+                        <option value="Saúde">Saúde</option>
+                        <option value="Pessoal">Pessoal</option>
                     </select>
                 </div>
                 <input type="submit" value={btnText}/>

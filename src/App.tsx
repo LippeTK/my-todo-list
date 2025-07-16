@@ -4,6 +4,7 @@ import Form from './components/layout/Form'
 import { useState } from 'react'
 
 import type { ITask } from './interfaces/Task';
+import TaskList from './components/layout/TaskList';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <main className="main-container">
         <h1>O que você gostaria de fazer?</h1>
         <Form btnText="Criar tarefa" taskList={taskList} setTaskList={setTaskList}/>
+        <TaskList taskList={taskList}/>
       </main>
       <Footer/>
     </>

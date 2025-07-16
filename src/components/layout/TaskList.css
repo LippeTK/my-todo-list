@@ -1,0 +1,19 @@
+.list-item{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 700px;
+}
+.list-container{
+    margin-bottom: 10px;
+}
+.list{
+    margin-bottom: 30px;
+}
+.task-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
