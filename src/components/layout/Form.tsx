@@ -12,7 +12,7 @@ interface Props{
 function Form({btnText, taskList, setTaskList}:Props){
 
     const [title, setTitle] = useState<string>("")
-    const [category, setCategory] = useState<string>("work")
+    const [category, setCategory] = useState<string>("Trabalho")
 
     const addTask = (e : FormEvent<HTMLFormElement>) => {
         e.preventDefault()
