@@ -7,10 +7,11 @@ interface Props{
     btnText:string,
     taskList: ITask[],
     setTaskList?: React.Dispatch<React.SetStateAction<ITask[]>>,
-    task?: ITask | null
+    task?: ITask | null,
+    handleUpdate?(id:number, title:string, category:string): void 
 }
 
-function Form({btnText, taskList, setTaskList, task}:Props){
+function Form({btnText, taskList, setTaskList, task, handleUpdate}:Props){
 
     const [id, setId] = useState<number>(0)
     const [title, setTitle] = useState<string>("")
@@ -24,14 +25,19 @@ function Form({btnText, taskList, setTaskList, task}:Props){
         }
     }, [task])
 
-    const addTask = (e : FormEvent<HTMLFormElement>) => {
+    const addOrUpdateTask = (e : FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+
+        if(handleUpdate){
+            handleUpdate(id, title, category)
+        }else{
         const id = Math.floor(Math.random() * 10000)
         
         const newTask: ITask = {id, title, category}
 
         setTaskList!([...taskList, newTask])
         setTitle("")
+        }
     }
 
     const handleChange = (e:ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -43,7 +49,7 @@ function Form({btnText, taskList, setTaskList, task}:Props){
     }
     return(
         <div className='form-container'>
-            <form onSubmit={addTask} className="form">
+            <form onSubmit={addOrUpdateTask} className="form">
                 <div className='input-container'>
                     <label>Título:</label>
                     <input type="text" name="title" value={title} onChange={handleChange} />
