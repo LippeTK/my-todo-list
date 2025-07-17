@@ -5,6 +5,7 @@ import { useState } from 'react'
 
 import type { ITask } from './interfaces/Task';
 import TaskList from './components/layout/TaskList';
+import Modal from './components/Modal';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
   }
   return (
     <>
+      <Modal children={<Form btnText="Editar tarefa" taskList={taskList}/>} />
       <Header/>
       <main className="main-container">
         <h1>O que você gostaria de fazer?</h1>
