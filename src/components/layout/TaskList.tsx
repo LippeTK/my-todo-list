@@ -1,10 +1,11 @@
 import type { ITask } from "../../interfaces/Task"
 import './TaskList.css'
 interface Props{
-    taskList: ITask[]
+    taskList: ITask[],
+    handleDelete: (id:number) => void
 }
 
-const TaskList = ({taskList}: Props) => {
+const TaskList = ({taskList, handleDelete}: Props) => {
 
     return(
         <>
@@ -21,7 +22,7 @@ const TaskList = ({taskList}: Props) => {
                                     </div>
                                     <div className="task-buttons">
                                         <i className="bi bi-pencil-square"></i>
-                                        <i className="bi bi-trash"></i>
+                                        <i className="bi bi-trash" onClick={() => {handleDelete(task.id)}}></i>
                                     </div>
                                 </li>
                             </div>
