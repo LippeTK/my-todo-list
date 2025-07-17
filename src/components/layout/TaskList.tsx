@@ -3,10 +3,10 @@ import './TaskList.css'
 interface Props{
     taskList: ITask[],
     handleDelete: (id:number) => void,
-    setShowModal: React.Dispatch<React.SetStateAction<boolean>>
+    editTask: (task:ITask) => void
 }
 
-const TaskList = ({taskList, handleDelete, setShowModal}: Props) => {
+const TaskList = ({taskList, handleDelete, editTask}: Props) => {
 
     return(
         <>
@@ -22,7 +22,7 @@ const TaskList = ({taskList, handleDelete, setShowModal}: Props) => {
                                         <p>-{task.category}</p>
                                     </div>
                                     <div className="task-buttons">
-                                        <i className="bi bi-pencil-square" onClick={() => {setShowModal(true)}}></i>
+                                        <i className="bi bi-pencil-square" onClick={() => {editTask(task)}}></i>
                                         <i className="bi bi-trash" onClick={() => {handleDelete(task.id)}}></i>
                                     </div>
                                 </li>

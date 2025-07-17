@@ -1,18 +1,28 @@
 import './Form.css'
 
 import type { ITask } from '../../interfaces/Task'
-import { useState, type ChangeEvent, type FormEvent } from 'react'
+import { useState, type ChangeEvent, type FormEvent, useEffect } from 'react'
 
 interface Props{
     btnText:string,
-    taskList: ITask[]
-    setTaskList?: React.Dispatch<React.SetStateAction<ITask[]>>
+    taskList: ITask[],
+    setTaskList?: React.Dispatch<React.SetStateAction<ITask[]>>,
+    task?: ITask | null
 }
 
-function Form({btnText, taskList, setTaskList}:Props){
+function Form({btnText, taskList, setTaskList, task}:Props){
 
+    const [id, setId] = useState<number>(0)
     const [title, setTitle] = useState<string>("")
     const [category, setCategory] = useState<string>("Trabalho")
+
+    useEffect(() => {
+        if(task) {
+            setId(task.id)
+            setTitle(task.title)
+            setCategory(task.category)
+        }
+    }, [task])
 
     const addTask = (e : FormEvent<HTMLFormElement>) => {
         e.preventDefault()
