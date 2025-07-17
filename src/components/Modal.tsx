@@ -1,15 +1,15 @@
 import './Modal.css'
 
-interface Props{
-    children: React.ReactNode
+interface Props {
+  children: React.ReactNode
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function Modal({children}: Props){
+export default function Modal({ children, setShowModal }: Props) {
     return(
         <div id="modal">
-            <div className="fade"></div>
+            <div className="fade" onClick={() => {setShowModal(false)}} ></div>
             <div className="modal">
-                <h2>Texto</h2>
                 {children}
             </div>
         </div>

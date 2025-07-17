@@ -2,10 +2,11 @@ import type { ITask } from "../../interfaces/Task"
 import './TaskList.css'
 interface Props{
     taskList: ITask[],
-    handleDelete: (id:number) => void
+    handleDelete: (id:number) => void,
+    setShowModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const TaskList = ({taskList, handleDelete}: Props) => {
+const TaskList = ({taskList, handleDelete, setShowModal}: Props) => {
 
     return(
         <>
@@ -21,7 +22,7 @@ const TaskList = ({taskList, handleDelete}: Props) => {
                                         <p>-{task.category}</p>
                                     </div>
                                     <div className="task-buttons">
-                                        <i className="bi bi-pencil-square"></i>
+                                        <i className="bi bi-pencil-square" onClick={() => {setShowModal(true)}}></i>
                                         <i className="bi bi-trash" onClick={() => {handleDelete(task.id)}}></i>
                                     </div>
                                 </li>
