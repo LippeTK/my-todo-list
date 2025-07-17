@@ -3,6 +3,10 @@
     flex-direction: column;
     width: 700px;
 }
+.form-container{
+    display: flex;
+    justify-content: center;
+}
 .form input{
     padding: 8px 15px;
     margin-bottom: 1.5em;

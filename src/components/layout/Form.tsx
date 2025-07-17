@@ -32,7 +32,7 @@ function Form({btnText, taskList, setTaskList}:Props){
         }
     }
     return(
-        <div>
+        <div className='form-container'>
             <form onSubmit={addTask} className="form">
                 <div className='input-container'>
                     <label>Título:</label>
