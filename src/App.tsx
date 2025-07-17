@@ -22,6 +22,16 @@ function App() {
     setShowModal(true)
     setTaskToUpdate(task)
   }
+  const updateTask = (id:number, title:string, category:string) => {
+    const updatedTask: ITask = {id, title, category}
+
+    const updatedItems = taskList.map((task) => {
+      return task.id === updatedTask.id ? updatedTask : task
+    })
+    setTaskList(updatedItems)
+    setShowModal(false)
+  }
+
   return (
     <>
       {showModal && (
@@ -31,6 +41,7 @@ function App() {
             taskList={taskList}
             setTaskList={setTaskList}
             task={taskToUpdate}
+            handleUpdate={updateTask}
           />
         </Modal>
       )}
